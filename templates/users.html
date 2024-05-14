@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Пользователи сайта
+{% endblock %}
+
+{% block body %}
+<div class="contaner">
+    <div class="about-header pt-md-5 pb-md-5 text-center">
+        <h1>Пользователи сайта</h1>
+    
+    </div>
+    <div class="alert mx-5"><hr></div>
+    {% for x in users %}
+    
+    <div class="alert mx-5">
+        <h2>{{x.Surname}} {{x.Name}}</h2>
+        <p>{{x.Position}}</p>
+        <a class="btn btn-warning" href="/users/{{x.id}}">Детали</a>
+        <hr>
+    </div>
+
+    {% endfor %}
+</div>
+{% endblock %}

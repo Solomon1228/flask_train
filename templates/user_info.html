@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Пользователь сайта
+{% endblock %}
+
+{% block body %}
+<div class="contaner">
+    <div class="about-header pt-md-5 pb-md-5 text-center">
+        <h1>Информация о пользователе</h1>
+    </div>
+    <div class="alert">
+        <h2>{{user_info.Surname}} {{user_info.Name}}</h2>
+        <p>{{user_info.Sex}} {{user_info.Bith_date.strftime('%d.%m.%Y')}}</p>
+        <p>{{user_info.Phone}}</p>
+        <p>{{user_info.Position}}</p>
+        <p>{{user_info.Short_info}}</p>
+    </div>
+    <div class="text-right">
+        <form action="/users/{{user_info.id}}" method="post">
+            <input type="submit" class="btn btn-danger" value="Удалить пользователя">
+            <input type="text" hidden class="btn btn-danger" name="action" value="Delete">
+        </form>
+        <form action="/users/{{user_info.id}}" method="post">
+            <input type="submit" class="btn btn-warning" value="Сохранить изменения">
+            <input type="text" hidden class="btn btn-danger" name="action" value="Update">
+        </form>
+    </div>
+</div>
+{% endblock %}

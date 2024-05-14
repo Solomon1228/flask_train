@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Страница создания пользователя
+{% endblock %}
+
+{% block body %}
+<div class="contaner mt-5 px-5 mx-5 text-center">
+    <h1>Добавление пользователя</h1>
+    <form action="/create_user" method="post">
+        <input type="text" name="name" id="name" class="form-control" placeholder="Введите имя пользователя"><br>
+        <input type="text" name="surname" id="surname" class="form-control" placeholder="Введите фамилию пользователя"><br>
+        <input type="text" name="phone" id="phone" class="form-control" placeholder="Введите номер телефона"><br>
+        <input type="text" name="position" id="position" class="form-control" placeholder="Введите должность"><br>
+        <input type="text" name="short_info" id="short_info" class="form-control" placeholder="Введите короткую информацию"><br>
+        <select name="sex" id="sex" class="form-control" placeholder="Выберите пол">
+            <option disabled selected>Выберите пол</option> 
+            <option value="Муж">Муж</option> 
+            <option value="Жен">Жен</option> 
+        </select><br>
+        <input type="date" name="bith_date" id="bith_date" class="form-control" placeholder="Введите дату"><br>
+        <input type="submit" class="btn btn-success" value="Создать">
+    </form>
+</div>
+{% endblock %}
